@@ -1,0 +1,106 @@
+* {
+  margin:0px;
+  padding: 0px;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction:column;
+  position: fixed;
+  background-image:
+    url(
+      'data:image/svg+xml,%3Csvg        xmlns="http://www.w3.org/2000/svg" width="28" height="49" viewBox="0 0 28 49"%3E%3Cg fill-rule="evenodd"%3E%3Cg id="hexagons" fill="%239C92AC" fill-opacity="0.4" fill-rule="nonzero"%3E%3Cpath d="M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+  top: 0;
+  left: 0;
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  background-color: grey;
+}
+/*dropdown menu links*/
+
+#menu {
+  display: none;
+  list-style-type: none;
+  width: 100%;
+}
+
+#menu a {
+  text-decoration: none;
+  color: black;
+  font-weight:bold;
+
+}
+
+
+#menu a:hover {
+  color: #8E24AA;
+  font-weight: bold;
+}
+#menu a:nth-child(even):hover {
+  color: #FDD835;
+  font-weight: bold;
+}
+
+#menu a:visited {
+  text-decoration: none;
+}
+
+#toggle-menu:checked ~ #menu {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  aligin-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 10px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  background-color:rgba(61, 61, 61, 0.65);
+}
+
+#toggle-menu:checked + .menu-on .top {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+   margin-top: 25px;
+}
+
+#toggle-menu:checked + .menu-on .meat {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin-top: -5px;
+}
+
+#toggle-menu:checked + .menu-on .bottom {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+#toggle-menu:checked + .menu-on + .nav {
+  top: 5px;
+x
+}
+
+#toggle-menu{
+  display: none;
+  width: 50px;
+  height: 25px;
+}
+
+.menu-on div {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  background-color: rgb(61, 61, 61);
+  margin-top: 6px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+/*Main Content*/
+#content {
+  display: grid;
+  padding-left: 75px;
+}
